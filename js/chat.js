@@ -71,6 +71,7 @@ function sendMessage() {
         autoScroll = true
         audio.play();
         document.getElementById("option").classList.replace("show", "hide")
+        window.location.href="chat.html"
 
     }
 
