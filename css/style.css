@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+.container {
+  display: contents;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.container input {
+  height: 3rem;
+  width: 80%;
+  padding: 0.3rem;
+  margin: 5px auto;
+  font-size: 1rem;
+  /* border-radius: 5px; */
+  border: none;
+  border-bottom: 2px solid rgb(173, 173, 173);
+}
+.container input:focus {
+  outline: none;
+}
+.btn {
+  border-radius: 10px;
+  background-color: rgb(79, 157, 230);
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+  margin: 3px 2px;
+  outline: none;
+  display: block;
+}
+.btn:hover,
+.btn:active {
+  background-color: rgb(10, 129, 241);
+  cursor: pointer;
+}
+
+.my-5 {
+  margin: 5px auto;
+}
+.my-25 {
+  margin: 25px auto;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-view {
+  width: 100%;
+  min-width: fit-content;
+}
+.hero {
+  color: rgb(129, 129, 129);
+  margin-bottom: 60px;
+}
+
+#navBar {
+  display: flex;
+  background-color: rgb(81, 141, 238);
+  height: 4rem;
+  justify-content: space-between;
+}
+#navBar #brand {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  display: block;
+  margin: 0.25rem 1rem;
+}
+#navBar #navLink {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  /* width: 50%; */
+}
+#navBar #navLink ul {
+  text-align: center;
+}
+#navBar #navLink ul li {
+  list-style: none;
+  display: inline;
+  margin: auto 15px;
+}
+#navBar #navLink ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+#navBar #navLink ul li a:hover {
+  font-style: underline;
+}
+
+.relative {
+  position: relative;
+}
+
+.redDot {
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background-color: red;
+  position: absolute;
+  top: 1px;
+  left: 43px;
+}
+.greenDot {
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background-color: rgb(30, 255, 0);
+  position: absolute;
+  top: -2px;
+  left: 34px;
+}
+.numTag {
+  /* height: 10px;  */
+  border-radius: 7px;
+  background-color: rgb(133, 129, 129);
+  color: white;
+  font-size: 12px;
+  padding: 1px 5px;
+  font-weight: bold;
+  border: 1px solid;
+  /* top: 15px; */
+  position: absolute;
+  top: -6px;
+  right: -22px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.chatList {
+  display: flex;
+  flex-direction: column;
+}
+.chatList .chatItem {
+  padding: 10px;
+  /* border-bottom: 2px solid #ccc; */
+  position: relative;
+}
+.chatList .chatItem h3 {
+  position: absolute;
+  top: 24px;
+  display: inline;
+  left: 73px;
+}
+.chatList .chatItem p {
+  display: inline;
+  float: right;
+  position: absolute;
+  top: 27px;
+  right: 32px;
+}
+.chatList .chatItem img {
+  display: inline;
+  float: right;
+  position: absolute;
+  top: 20px;
+  right: 13px;
+  width: 6.5px;
+  height: 32px;
+}
+.chatList .chatItem .avatar {
+  height: 50px;
+  width: 50px;
+  border: 1px solid rgb(197, 193, 193);
+  border-radius: 100%;
+  display: inline-block;
+  background-image: url("../images/profile.png");
+  background-size: contain;
+}
+
+.chatTab {
+  background-color: rgb(81, 141, 238);
+  height: 4rem;
+  color: white;
+  position: fixed;
+  box-shadow: rgb(38 57 77) 0px -7px 18px 8px;
+  width: 100%;
+}
+
+.chatTab .chatItem {
+  padding: 10px;
+  /* border-bottom: 2px solid #ccc; */
+  position: relative;
+}
+.chatTab .chatItem h3 {
+  position: absolute;
+  top: 24px;
+  display: inline;
+  left: 77px;
+}
+.chatTab .chatItem p {
+  display: inline;
+  float: right;
+  position: absolute;
+  top: 27px;
+  right: 32px;
+}
+.chatTab .chatItem img {
+  display: inline;
+  float: right;
+  position: absolute;
+  top: 20px;
+  right: 13px;
+  width: 6.5px;
+  height: 32px;
+  filter: invert();
+}
+.chatTab .chatItem .option {
+  /* display: inline; */
+  float: right;
+  position: absolute;
+  top: 52px;
+  right: 12px;
+  width: 98.5px;
+  height: 32px;
+  background-color: whitesmoke;
+  color: black;
+  padding: 5px;
+  /* border-radius: 10px; */
+  border: 2px solid black;
+  
+}
+.chatTab .chatItem .avatar {
+  position: absolute;
+  left: 34px;
+  top: 13px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid rgb(197, 193, 193);
+  border-radius: 100%;
+  display: inline-block;
+  background-image: url(../images/profile.png);
+  background-size: contain;
+  background-color: white;
+}
+
+.chatTab .chatItem .back {
+  font-size: 1.5rem;
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  left: 4px;
+}
+
+.input {
+  position: fixed;
+  bottom: 8px;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  align-items: baseline;
+}
+.input textarea {
+  display: block;
+  width: 95%;
+  max-width: 95%;
+  margin: auto 5px;
+  border-radius: 40px;
+  padding: 14px 10px;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  overflow: visible;
+  scroll-behavior: unset;
+  resize: none;
+}
+.input i {
+  /* margin: auto 5px; */
+  margin-right: 5px;
+  display: flex;
+  margin-bottom: inherit;
+  background-color: rgb(81, 141, 238);
+  border-radius: 100%;
+  margin-top: auto;
+}
+
+.bg-blue {
+  background-color: rgb(67 124 134);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  box-shadow: 0 0 8rem 0 rgba(black, 0.1), 0rem 2rem 4rem -3rem rgba(black, 0.5);
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  /* height: 475px; */
+  top: 64px;
+
+  bottom: 61px;
+  overflow: scroll;
+}
+.messages .chatCloudSend {
+  background-color: rgb(159, 218, 236);
+  border-radius: 10px 10px 0px 10px;
+  padding: 10px;
+  max-width: 60%;
+  min-width: 12%;
+  overflow-wrap: break-word;
+  margin: 1rem 1rem 1rem auto;
+  box-shadow: 0 0 2rem rgba(black, 0.075), 0rem 1rem 1rem -1rem rgba(black, 0.1);
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.messages .chatCloudReceive {
+  background-color: rgb(177, 132, 235);
+  border-radius: 10px 10px 10px 0px;
+  padding: 10px;
+  margin: 10px;
+  width: fit-content;
+  max-width: 66%;
+  overflow-wrap: break-word;
+  position: relative;
+  min-width: 40%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.time {
+  font-size: 0.8rem;
+  text-align: right;
+  color: rgb(61, 61, 61);
+}
+.sender {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: rgb(90, 43, 151);
+}
+
+.logout {
+  font-size: 2rem;
+  margin: 13px;
+}

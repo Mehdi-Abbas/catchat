@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  user-scalable=no">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/chat.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./images/favicon_io/site.webmanifest">
+    <title>Catchat | Chat</title>
+</head>
+<body class="bg-blue">
+    <header>
+        
+        <div class="chatTab">
+            <div class="chatItem" id="chatItem">
+                <div class="back" id="back">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </div>
+                <div class="avatar"></div>
+                <h3 >Group</h3>
+                
+                <img src="./images/bars.png" alt="" id="optionButton">
+                <div class="option hide" id="option">Delete chat</div>
+            </div>
+            
+        </div>
+        
+    </header>
+    <main>
+        <div class="messages" id="message">
+            
+        </div>
+        
+    </main>
+    <footer>
+        <div class="input">
+            <textarea type="text" placeholder="Type a message" rows=1 id="input"></textarea>
+            <i class="fa fa-telegram fa-3x" id="sendButton" aria-hidden="true"></i>
+        </div>
+    </footer>
+    
+</body>
+</html>
