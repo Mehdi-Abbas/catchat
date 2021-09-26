@@ -35,7 +35,7 @@ document.getElementById("input").addEventListener("keydown", () => {
     }
 })
 
-Let firstTime=true
+
 function sendMessage() {
     let input = document.getElementById('input').value
     if (input.match(/\s*/g)[0] !== input && input !== "") {
@@ -71,10 +71,10 @@ function sendMessage() {
         autoScroll = true
         audio.play();
         document.getElementById("option").classList.replace("show", "hide")
-        If(firstTime){
+        If(localStorage.getItem("messages").length === 1){
            location.reload()
         }
-        firstTime=false
+        
         
 
     }
