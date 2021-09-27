@@ -71,7 +71,7 @@ function sendMessage() {
         autoScroll = true
         audio.play();
         document.getElementById("option").classList.replace("show", "hide")
-        If(localStorage.getItem("messages").length === 1){
+        If(localStorage.getItem("messages")!==null && localStorage.getItem("messages").length === 1){
            location.reload()
         }
         
