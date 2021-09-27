@@ -71,11 +71,12 @@ function sendMessage() {
         autoScroll = true
         audio.play();
         document.getElementById("option").classList.replace("show", "hide")
-        If(localStorage.getItem("messages")!==null && localStorage.getItem("messages").length === 1){
-           location.reload()
-        }
-        
-        
+        // if(localStorage.getItem("messages")!==null && 
+        // localStorage.getItem("messages").length === 1){
+        //    location.reload()
+        // }
+
+
 
     }
 
@@ -85,43 +86,41 @@ function sendMessage() {
 document.getElementById("sendButton").addEventListener("click", sendMessage)
 document.getElementById("message").addEventListener("click", () => autoScroll = false)
 
-if (localStorage.getItem("messages") !== null && localStorage.getItem("messages").length>0) {
 
-    let interid = setInterval(() => {
+let interid = setInterval(() => {
 
-        let allMessages = JSON.parse(localStorage.getItem("messages"))
-        document.getElementById("message").innerHTML = ""
-        allMessages.forEach(element => {
-            let div = document.createElement("div")
-            div.classList.add(element.sender === localStorage.getItem("currentUser") ? "chatCloudSend" : "chatCloudReceive")
-            if (element.sender !== localStorage.getItem("currentUser")) {
-                let sender_ = document.createElement("div")
-                sender_.classList.add("sender")
-                sender_.innerText = element.sender
-                div.appendChild(sender_)
-            }
-
-            let txt = document.createElement("div")
-            txt.classList.add("text")
-            txt.innerText = element.text
-            div.appendChild(txt)
-
-            let time = document.createElement("div")
-            time.classList.add("time")
-            time.innerText = element.timeStamp
-            div.appendChild(time)
-            document.getElementById("message").appendChild(div)
-        });
-
-
-        if (autoScroll) {
-            var objDiv = document.getElementById("message");
-            objDiv.scrollTop = objDiv.scrollHeight;
+    let allMessages = JSON.parse(localStorage.getItem("messages"))
+    document.getElementById("message").innerHTML = ""
+    allMessages.forEach(element => {
+        let div = document.createElement("div")
+        div.classList.add(element.sender === localStorage.getItem("currentUser") ? "chatCloudSend" : "chatCloudReceive")
+        if (element.sender !== localStorage.getItem("currentUser")) {
+            let sender_ = document.createElement("div")
+            sender_.classList.add("sender")
+            sender_.innerText = element.sender
+            div.appendChild(sender_)
         }
-        
 
-    }, 500)
-}
+        let txt = document.createElement("div")
+        txt.classList.add("text")
+        txt.innerText = element.text
+        div.appendChild(txt)
+
+        let time = document.createElement("div")
+        time.classList.add("time")
+        time.innerText = element.timeStamp
+        div.appendChild(time)
+        document.getElementById("message").appendChild(div)
+    });
+
+
+    if (autoScroll) {
+        var objDiv = document.getElementById("message");
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
+
+
+}, 500)
 
 let option = document.getElementById("optionButton")
 
