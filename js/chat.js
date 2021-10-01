@@ -84,9 +84,9 @@ function sendMessage() {
 
 
         autoScroll = true
-        
+
         document.getElementById("option").classList.replace("show", "hide")
-        
+
 
 
 
@@ -94,7 +94,7 @@ function sendMessage() {
 
 }
 
- let sizeOfData = 0
+let sizeOfData = 0
 onValue(messagesListRef, function (snapshot) {
     sizeOfData = (parseInt(snapshot.size))
 })
@@ -103,31 +103,31 @@ onValue(messagesListRef, function (snapshot) {
 
 document.getElementById("sendButton").addEventListener("click", sendMessage)
 document.getElementById("message").addEventListener("click", () => autoScroll = false)
-localStorage.setItem("size",0)
+localStorage.setItem("size", 0)
 if (true) {
 
     let interid = setInterval(() => {
         // if(localStorage.size<)
         document.getElementById("message").innerHTML = ""
         onValue(messagesListRef, (snapshot) => {
-            let x=1
+            let x = 1
             snapshot.forEach((childSnapshot) => {
                 // const childKey = childSnapshot.key;
                 const childData = childSnapshot.val();
-                if(parseInt(localStorage.getItem("size"))<snapshot.size && 
-                   childData.sender !== localStorage.getItem("currentUser") &&
-                   x===snapshot.size){
+                if (parseInt(localStorage.getItem("size")) < snapshot.size &&
+                    childData.sender !== localStorage.getItem("currentUser") &&
+                    x === snapshot.size) {
                     audio.play();
-                    localStorage.setItem("size",snapshot.size)
-                    document.getElementById("down").style.backgroundColor="#15ed26"
-                    document.getElementById("down").style.color="#010404;"
+                    localStorage.setItem("size", snapshot.size)
+                    document.getElementById("down").style.color = "#000"
+                    document.getElementById("down").style.backgroundColor = "#15ed26"
 
-    
+
                 }
-                
+
                 let div = document.createElement("div")
-                if(x===snapshot.size){
-                    div.id="lastMessage"
+                if (x === snapshot.size) {
+                    div.id = "lastMessage"
                 }
                 div.classList.add(childData.sender === localStorage.getItem("currentUser") ? "chatCloudSend" : "chatCloudReceive")
                 if (childData.sender !== localStorage.getItem("currentUser")) {
@@ -158,7 +158,16 @@ if (true) {
             var objDiv = document.getElementById("message");
             objDiv.scrollTop = objDiv.scrollHeight;
         }
-
+        
+        //get position of last position
+        if (screen.height - document.getElementById("lastMessage").getBoundingClientRect()['bottom'] <= 9) {
+            document.getElementById("down_").classList.replace("hide", "show")
+        }
+        if (screen.height - document.getElementById("lastMessage").getBoundingClientRect()['bottom'] > 9) {
+            document.getElementById("down_").classList.replace("show", "hide")
+            document.getElementById("down").style.color = "#86989b"
+            document.getElementById("down").style.backgroundColor = "#0c3a42"
+        }
 
     }, 500)
 }
@@ -174,7 +183,12 @@ option.addEventListener("click", () => {
 })
 
 document.getElementById("option").addEventListener("click", () => {
-    
+
     document.getElementById("option").classList.replace("show", "hide")
 })
 
+
+document.getElementById("down_").addEventListener("click", () => {
+    document.getElementById("down").style.color = "#86989b"
+    document.getElementById("down").style.backgroundColor = "#0c3a42"
+})
