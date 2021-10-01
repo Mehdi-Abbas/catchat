@@ -22,3 +22,15 @@ document.getElementById("signup").addEventListener("click", () => {
 
 
 })
+
+document.getElementById("showPass").addEventListener("click", () => {
+    if (document.getElementById("showPass").classList.contains("fa-eye")) {
+        document.getElementById("password").type = "text"
+        document.getElementById("showPass").classList.replace("fa-eye", "fa-eye-slash")
+    }
+    else {
+        document.getElementById("password").type = "password"
+        document.getElementById("showPass").classList.replace("fa-eye-slash", "fa-eye")
+    }
+
+})

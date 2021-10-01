@@ -24,8 +24,32 @@ body {
   border: none;
   border-bottom: 2px solid rgb(173, 173, 173);
 }
+
 .container input:focus {
   outline: none;
+}
+.container .pass{
+  position: relative;
+  height: 3rem;
+  width: 80%;
+  padding: 0.3rem;
+  margin: 5px auto;
+  font-size: 1rem;
+  /* border-radius: 5px; */
+  border: none;
+  border-bottom: 2px solid rgb(173, 173, 173);
+}
+.container .pass input{
+  border: none;
+  width: 89%;
+  position: absolute;
+  left: 0px;
+  top: -7px;
+}
+.container .pass i{
+  position: absolute;
+  top: 18px;
+  right: 8px;
 }
 .btn {
   border-radius: 10px;
