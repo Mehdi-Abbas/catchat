@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 .container {
   display: contents;
@@ -28,7 +28,7 @@ body {
 .container input:focus {
   outline: none;
 }
-.container .pass{
+.container .pass {
   position: relative;
   height: 3rem;
   width: 80%;
@@ -39,14 +39,14 @@ body {
   border: none;
   border-bottom: 2px solid rgb(173, 173, 173);
 }
-.container .pass input{
+.container .pass input {
   border: none;
   width: 89%;
   position: absolute;
   left: 0px;
   top: -7px;
 }
-.container .pass i{
+.container .pass i {
   position: absolute;
   top: 18px;
   right: 8px;
@@ -92,7 +92,13 @@ body {
 
 #navBar {
   display: flex;
-  background-color: rgb(81, 141, 238);
+  /* background-color: rgb(81, 141, 238); */
+  background: rgb(130, 19, 126);
+  background: linear-gradient(
+    90deg,
+    rgba(130, 19, 126, 0.8323704481792717) 72%,
+    rgba(187, 159, 224, 1) 100%
+  );
   height: 4rem;
   justify-content: space-between;
 }
@@ -213,7 +219,13 @@ body {
 }
 
 .chatTab {
-  background-color: rgb(81, 141, 238);
+  /* background-color: rgb(81, 141, 238); */
+  background: rgb(130, 19, 126);
+  background: linear-gradient(
+    90deg,
+    rgba(130, 19, 126, 0.8323704481792717) 72%,
+    rgba(187, 159, 224, 1) 100%
+  );
   height: 4rem;
   color: white;
   position: fixed;
@@ -262,7 +274,6 @@ body {
   padding: 5px;
   /* border-radius: 10px; */
   border: 2px solid black;
-  
 }
 .chatTab .chatItem .avatar {
   position: absolute;
@@ -290,11 +301,11 @@ body {
   position: fixed;
   bottom: 8px;
   width: 100%;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   display: flex;
   align-items: baseline;
 }
-.input #down{
+.input #down {
   position: absolute;
   right: 10px;
   bottom: 62px;
@@ -302,8 +313,8 @@ body {
   font-size: 23px;
   height: 25px;
   width: 25px;
-  background-color: #0c3a42;
-  color: #86989b;
+  background-color: #3b92a1;
+  color: #293133;
   opacity: 72%;
 }
 .input textarea {
@@ -325,13 +336,27 @@ body {
   margin-right: 5px;
   display: flex;
   margin-bottom: inherit;
-  background-color: rgb(81, 141, 238);
+  /* background-color: rgb(81, 141, 238); */
   border-radius: 100%;
   margin-top: auto;
+  /* position: relative; */
+}
+#sendButton {
+ 
+  border: 2px solid white ;
+  z-index: -1;
+  border:none;
+  border-width: 1.5px;
+  border-radius: 100%;
+  background-image: linear-gradient(to left, rgb(159, 218, 236), #d53a9d);
 }
 
 .bg-blue {
-  background-color: rgb(67 124 134);
+  /* background-color: rgb(67 124 134); */
+  background-image: url("../images/star.jpg");
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  /* background-image: url(); */
 }
 
 .messages {
@@ -343,14 +368,14 @@ body {
   position: absolute;
   width: 100%;
   z-index: -1;
-  /* height: 475px; */
   top: 64px;
-
   bottom: 61px;
   overflow: scroll;
 }
 .messages .chatCloudSend {
-  background-color: rgb(159, 218, 236);
+  
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
   border-radius: 10px 10px 0px 10px;
   padding: 10px;
   max-width: 60%;
@@ -361,8 +386,24 @@ body {
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.messages .chatCloudSend::before {
+  content: " ";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  border: 1px solid;
+  z-index: -1;
+  border:none;
+  border-width: 1.5px;
+  border-radius: 10px 10px 0px 10px;
+  background-image: linear-gradient(to left, rgb(159, 218, 236), #d53a9d);
+
+}
 .messages .chatCloudReceive {
-  background-color: rgb(177, 132, 235);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
   border-radius: 10px 10px 10px 0px;
   padding: 10px;
   margin: 10px;
@@ -373,16 +414,33 @@ body {
   min-width: 40%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.messages .chatCloudReceive::before {
+  content: " ";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  border: 1px solid;
+  z-index: -1;
+  border:none;
+  border-width: 1.5px;
+  border-radius: 10px 10px 10px 0px;
+  background-image: linear-gradient(to left, rgb(159, 218, 236), #d53a9d);
+
+}
 
 .time {
   font-size: 0.8rem;
   text-align: right;
-  color: rgb(61, 61, 61);
+  /* color: rgb(61, 61, 61); */
+  color: rgb(206, 200, 200);
 }
 .sender {
   font-size: 0.9rem;
   font-weight: bold;
-  color: rgb(90, 43, 151);
+  /* color: rgb(90, 43, 151); */
+  color: rgb(126, 236, 255);
 }
 
 .logout {

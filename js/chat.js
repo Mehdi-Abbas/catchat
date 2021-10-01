@@ -165,8 +165,8 @@ if (true) {
         }
         if (screen.height - document.getElementById("lastMessage").getBoundingClientRect()['bottom'] > 9) {
             document.getElementById("down_").classList.replace("show", "hide")
-            document.getElementById("down").style.color = "#86989b"
-            document.getElementById("down").style.backgroundColor = "#0c3a42"
+            document.getElementById("down").style.color = "#293133"
+            document.getElementById("down").style.backgroundColor = "#3b92a1"
         }
 
     }, 500)
@@ -189,6 +189,6 @@ document.getElementById("option").addEventListener("click", () => {
 
 
 document.getElementById("down_").addEventListener("click", () => {
-    document.getElementById("down").style.color = "#86989b"
-    document.getElementById("down").style.backgroundColor = "#0c3a42"
+    document.getElementById("down").style.color = "#293133"
+    document.getElementById("down").style.backgroundColor = "##3b92a1"
 })
