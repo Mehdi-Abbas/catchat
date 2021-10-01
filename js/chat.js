@@ -119,10 +119,16 @@ if (true) {
                    x===snapshot.size){
                     audio.play();
                     localStorage.setItem("size",snapshot.size)
+                    document.getElementById("down").style.backgroundColor="#15ed26"
+                    document.getElementById("down").style.color="#010404;"
+
     
                 }
-                x++
+                
                 let div = document.createElement("div")
+                if(x===snapshot.size){
+                    div.id="lastMessage"
+                }
                 div.classList.add(childData.sender === localStorage.getItem("currentUser") ? "chatCloudSend" : "chatCloudReceive")
                 if (childData.sender !== localStorage.getItem("currentUser")) {
                     let sender_ = document.createElement("div")
@@ -141,6 +147,7 @@ if (true) {
                 time.innerText = childData.timeStamp
                 div.appendChild(time)
                 document.getElementById("message").appendChild(div)
+                x++
             });
         }, {
             onlyOnce: true

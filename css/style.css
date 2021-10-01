@@ -294,6 +294,18 @@ body {
   display: flex;
   align-items: baseline;
 }
+.input #down{
+  position: absolute;
+  right: 10px;
+  bottom: 62px;
+  padding: 2px 5px;
+  font-size: 23px;
+  height: 25px;
+  width: 25px;
+  background-color: #0c3a42;
+  color: #86989b;
+  opacity: 72%;
+}
 .input textarea {
   display: block;
   width: 95%;
