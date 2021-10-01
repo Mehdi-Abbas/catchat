@@ -3,15 +3,9 @@ if (localStorage.getItem("login") === 'false') {
 
 }
 
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
 import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyB3Q709I4MfZ_mkH9HOZT-b7NftvldoSxs",
     authDomain: "catchat-cab9a.firebaseapp.com",
@@ -28,7 +22,6 @@ initializeApp(firebaseConfig);
 
 const db = getDatabase();
 const messagesListRef = ref(db, 'messages');
-// ref(db,'messages/MkvRJvASFLxFyA_EM0F').remove()
 
 document.getElementById("back").addEventListener("click", () => {
     window.location.href = "home.html"
@@ -80,14 +73,6 @@ function sendMessage() {
             timeStamp: str
         }
 
-        // if (localStorage.getItem("messages") === null) {
-        //     localStorage.setItem("messages", JSON.stringify([message]))
-        // }
-        // else {
-        //     let tempMessages = JSON.parse(localStorage.getItem("messages"))
-        //     tempMessages.push(message)
-        //     localStorage.setItem("messages", JSON.stringify(tempMessages))
-        // }
 
 
         const newMessagesRef = push(messagesListRef);
@@ -99,17 +84,9 @@ function sendMessage() {
 
 
         autoScroll = true
-        audio.play();
+        
         document.getElementById("option").classList.replace("show", "hide")
-        // if(JSON.parse(localStorage.getItem("messages")).length === 1){
-        //    location.reload()
-        //    console.log("reload")
-        // }
-        // const db = getDatabase();
-        // const dbRef = ref(db, 'messages');
-        // onValue(messagesListRef, function(snapshot) {
-        //     console.dir(snapshot.size)
-        //   })
+        
 
 
 
@@ -120,47 +97,28 @@ function sendMessage() {
  let sizeOfData = 0
 onValue(messagesListRef, function (snapshot) {
     sizeOfData = (parseInt(snapshot.size))
-    // console.log(sizeOfData)
 })
 
 
 
 document.getElementById("sendButton").addEventListener("click", sendMessage)
 document.getElementById("message").addEventListener("click", () => autoScroll = false)
-// let a=getSize()
-// console.log(sizeOfData)
+localStorage.setItem("size",0)
 if (true) {
 
     let interid = setInterval(() => {
-
-        // let allMessages = JSON.parse(localStorage.getItem("messages"))
-        // document.getElementById("message").innerHTML = ""
-        // allMessages.forEach(element => {
-        //     let div = document.createElement("div")
-        //     div.classList.add(element.sender === localStorage.getItem("currentUser") ? "chatCloudSend" : "chatCloudReceive")
-        //     if (element.sender !== localStorage.getItem("currentUser")) {
-        //         let sender_ = document.createElement("div")
-        //         sender_.classList.add("sender")
-        //         sender_.innerText = element.sender
-        //         div.appendChild(sender_)
-        //     }
-
-        //     let txt = document.createElement("div")
-        //     txt.classList.add("text")
-        //     txt.innerText = element.text
-        //     div.appendChild(txt)
-
-        //     let time = document.createElement("div")
-        //     time.classList.add("time")
-        //     time.innerText = element.timeStamp
-        //     div.appendChild(time)
-        //     document.getElementById("message").appendChild(div)
-        // });
+        // if(localStorage.size<)
         document.getElementById("message").innerHTML = ""
         onValue(messagesListRef, (snapshot) => {
+            
             snapshot.forEach((childSnapshot) => {
-                const childKey = childSnapshot.key;
+                // const childKey = childSnapshot.key;
                 const childData = childSnapshot.val();
+                if(parseInt(localStorage.getItem("size"))<snapshot.size && childData.sender !== localStorage.getItem("currentUser")){
+                    audio.play();
+                    localStorage.setItem("size",snapshot.size)
+    
+                }
                 let div = document.createElement("div")
                 div.classList.add(childData.sender === localStorage.getItem("currentUser") ? "chatCloudSend" : "chatCloudReceive")
                 if (childData.sender !== localStorage.getItem("currentUser")) {
@@ -206,12 +164,7 @@ option.addEventListener("click", () => {
 })
 
 document.getElementById("option").addEventListener("click", () => {
-    getDatabase.ref(`messages`).remove()
-    console.log("remove")
-    // if (localStorage.getItem("messages") !== null) {
-    //     messagesListRef.remove()
-    //      location.reload()
-    // }
+    
     document.getElementById("option").classList.replace("show", "hide")
 })
 
