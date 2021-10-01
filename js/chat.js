@@ -110,15 +110,18 @@ if (true) {
         // if(localStorage.size<)
         document.getElementById("message").innerHTML = ""
         onValue(messagesListRef, (snapshot) => {
-            
+            let x=1
             snapshot.forEach((childSnapshot) => {
                 // const childKey = childSnapshot.key;
                 const childData = childSnapshot.val();
-                if(parseInt(localStorage.getItem("size"))<snapshot.size && childData.sender !== localStorage.getItem("currentUser")){
+                if(parseInt(localStorage.getItem("size"))<snapshot.size && 
+                   childData.sender !== localStorage.getItem("currentUser") &&
+                   x===snapshot.size){
                     audio.play();
                     localStorage.setItem("size",snapshot.size)
     
                 }
+                x++
                 let div = document.createElement("div")
                 div.classList.add(childData.sender === localStorage.getItem("currentUser") ? "chatCloudSend" : "chatCloudReceive")
                 if (childData.sender !== localStorage.getItem("currentUser")) {
