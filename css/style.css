@@ -485,6 +485,7 @@ body {
 #chats{
   height: 576px;
   background-color: white;
+  align-items: flex-start;
 }
 #calls {
   align-items: center;
