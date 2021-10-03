@@ -61,9 +61,9 @@ function sendMessage() {
         var d = new Date();
         var time = d.toLocaleTimeString();
         time = time.split(" ")
-        let ampm = time[1]
+        let ampm = time[1]!==undefined?time[1]:parseInt(time[0].split(":")[0])>=0 && parseInt(time[0].split(":")[0])<=11?"AM":"PM"
         time = time[0].split(":")
-        let str = time[0] + ":" + time[1] + " " + ampm
+        let str = parseInt(time[0])>12?parseInt(time[0])-12:time[0]  + ":" + time[1] + " " + ampm
 
 
         let message = {
