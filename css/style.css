@@ -468,7 +468,7 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .swiper-slide img {
