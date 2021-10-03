@@ -180,6 +180,7 @@ body {
 .chatList {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .chatList .chatItem {
   padding: 10px;
@@ -216,6 +217,7 @@ body {
   display: inline-block;
   background-image: url("../images/profile.png");
   background-size: contain;
+  float: left;
 }
 
 .chatTab {
@@ -342,10 +344,9 @@ body {
   /* position: relative; */
 }
 #sendButton {
- 
-  border: 2px solid white ;
+  border: 2px solid white;
   z-index: -1;
-  border:none;
+  border: none;
   border-width: 1.5px;
   border-radius: 100%;
   background-image: linear-gradient(to left, rgb(159, 218, 236), #d53a9d);
@@ -373,7 +374,6 @@ body {
   overflow: scroll;
 }
 .messages .chatCloudSend {
-  
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   border-radius: 10px 10px 0px 10px;
@@ -395,11 +395,10 @@ body {
   right: -1px;
   border: 1px solid;
   z-index: -1;
-  border:none;
+  border: none;
   border-width: 1.5px;
   border-radius: 10px 10px 0px 10px;
   background-image: linear-gradient(to left, rgb(159, 218, 236), #d53a9d);
-
 }
 .messages .chatCloudReceive {
   background-color: rgba(0, 0, 0, 0.9);
@@ -423,11 +422,10 @@ body {
   right: -1px;
   border: 1px solid;
   z-index: -1;
-  border:none;
+  border: none;
   border-width: 1.5px;
   border-radius: 10px 10px 10px 0px;
   background-image: linear-gradient(to left, rgb(159, 218, 236), #d53a9d);
-
 }
 
 .time {
@@ -446,4 +444,57 @@ body {
 .logout {
   font-size: 2rem;
   margin: 13px;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(236, 230, 230);
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide.swiper-slide-active {
+  height: 576px;
+  align-items: flex-start;
+}
+#chats{
+  height: 576px;
+  background-color: white;
+}
+#calls {
+  align-items: center;
+  color: #479351;
+  background-color: #b9ddbd;
+  height: 576px;
+}
+#status {
+  align-items: center;
+  color: #94219b;
+  background-color: #d6c5d7;
+  height: 576px;
 }

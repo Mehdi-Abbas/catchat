@@ -19,3 +19,4 @@ document.getElementById("logoutButton").addEventListener("click", () => {
     localStorage.setItem("login", false)
     window.location.href = "login.html"
 })
+
