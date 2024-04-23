@@ -7,14 +7,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase
 import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB3Q709I4MfZ_mkH9HOZT-b7NftvldoSxs",
-    authDomain: "catchat-cab9a.firebaseapp.com",
-    projectId: "catchat-cab9a",
-    storageBucket: "catchat-cab9a.appspot.com",
-    messagingSenderId: "393659026605",
-    appId: "1:393659026605:web:01571e9439d0c2220d8a24",
-    measurementId: "G-Z3W8S84442",
-    databaseURL: "https://catchat-cab9a-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    apiKey: ${{ vars.API_KEY }},
+    authDomain: ${{ vars.AUTH_DOMAIN }},
+    projectId: ${{ vars.PROJECT_ID }},
+    storageBucket: ${{ vars.STORAGE_BUCKET }},
+    messagingSenderId: ${{ vars.MESSAGING_SENDER_ID }},
+    appId: ${{ vars.APP_ID }},
+    measurementId: ${{ vars.MEASUREMENT_ID }},
+    databaseURL: ${{ vars.MEASUREMENT_ID }},
 };
 
 // Initialize Firebase
